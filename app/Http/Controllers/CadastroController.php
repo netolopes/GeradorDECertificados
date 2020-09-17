@@ -58,7 +58,7 @@ class CadastroController extends Controller
 		  'dt' => 'required'
         ]);
 
-        Cadastro::create($request->all());
+        $getCadastro = $request->add();
         return redirect()->route('cadastro.index')
                         ->with('success', 'new cadastro created successfully');
     }
@@ -86,7 +86,7 @@ class CadastroController extends Controller
 		'ch' => 'required',
 		'dt' => 'required'
       ]);
-      $cadastro = $this->cadastro_repository->find($id);
+      
 	  $getCadastro = $request->all();
 	  $this->cadastro_repository->edit($id,$getCadastro);
      
